@@ -35,7 +35,7 @@
             <input class="form-control w-100 mt-1" name="name" id="name" placeholder="" required>
         </div>
         
-        <p class="mt-3">My Nickname</p>
+        <p class="mt-3">Nickname</p>
         <div>
             <input class="form-control w-50 mt-1" name="nickname" id="nickname" required>
         </div>
@@ -47,8 +47,21 @@
         
         <p class="mt-3">How do you spend a day off recently??</p>
         <div>
-            <textarea class="form-control" id="hobby" name="hobby"　cols="100" rows="5"></textarea>
+            <textarea class="form-control" id="hobby" name="hobby"　cols="100" rows="3"></textarea>
         </div>
+
+        <p class="mt-3">What is the most fun thing or coolest thing that you have ever done??</p>
+        <div>
+            <textarea class="form-control" id="fun" name="fun"　cols="100" rows="3"></textarea>
+        </div>
+        
+        <p class="mt-3">Do you have something new which you would like to start to do lately??</p>
+        <div>
+            <textarea class="form-control" id="interest" name="interest"　cols="100" rows="3"></textarea>
+        </div>
+        
+        
+        
         
         <input type="submit" class="mt-4 btn btn-primary" value="Submit">
         
@@ -94,13 +107,15 @@
         $(function () {
             $('form').submit(function () {
                 const name    = $('#name').val();
-                const dept = $('#dept').val();
-                const loc  = $('#loc').val();
-                const kind  =$('input[name="kind"]:checked').val();
-                const desc = $('#desc').val();
-                const msg = `"appname":"good_notgood",\n"name":"${name}",\n"dept":"${dept}",\n"loc":"${loc}",\n"kind":"${kind}",\n"desc":"${desc}"`;
+                const nickname = $('#nickname').val();
+                const personality  = $('#personality').val();
+                const hobby  =$('#hobby').val();
+                const fun = $('#fun').val();
+                const interest = $('#interest').val();
+                const msg = `"appname":"profile",\n"name":"${name}",\n"nickname":"${nickname}",\n"personality":"${personality}",\n"hobby":"${hobby}",\n"fun":"${fun}",\n"interest":"${interest}"`;
                 sendText(msg);
                 return false;
+
             });
         });
 
